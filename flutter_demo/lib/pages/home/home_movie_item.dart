@@ -48,11 +48,18 @@ class GoHomeMovieItem extends StatelessWidget {
       children: [
         buildContentImage(),
         SizedBox(width: 8),
-        buildContentInfo(),
-        SizedBox(width: 8),
-        buildContentLine(),
-        SizedBox(width: 8),
-        buildContentWish()
+        Expanded(
+            child: IntrinsicHeight(
+          child: Row(
+            children: [
+              buildContentInfo(),
+              SizedBox(width: 8),
+              buildContentLine(),
+              SizedBox(width: 8),
+              buildContentWish()
+            ],
+          ),
+        )),
       ],
     );
   }
@@ -85,19 +92,26 @@ class GoHomeMovieItem extends StatelessWidget {
   Widget buildContentInfoTitle() {
     return Text.rich(TextSpan(children: [
       WidgetSpan(
-          child: Icon(Icons.airplay_outlined, color: Colors.red, size: 23)),
+          child: Icon(Icons.airplay_outlined, color: Colors.red, size: 25),
+          baseline: TextBaseline.ideographic,
+          alignment: PlaceholderAlignment.middle),
       WidgetSpan(
           child: SizedBox(
         width: 3,
       )),
-      TextSpan(
-          text: movieItem.title,
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+      ...movieItem.title.runes.map((rune) {
+        return WidgetSpan(
+            child: Text(new String.fromCharCode(rune),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            alignment: PlaceholderAlignment.middle);
+      }).toList(),
       WidgetSpan(
           child: SizedBox(
         width: 3,
       )),
-      TextSpan(text: "(${movieItem.playDate})", style: TextStyle(fontSize: 16))
+      WidgetSpan(
+          child:
+              Text("(${movieItem.playDate})", style: TextStyle(fontSize: 12)))
     ]));
   }
 
@@ -134,7 +148,8 @@ class GoHomeMovieItem extends StatelessWidget {
 
   Widget buildContentWish() {
     return Container(
-      height: 120,
+      // height: 120,
+      width: 60,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

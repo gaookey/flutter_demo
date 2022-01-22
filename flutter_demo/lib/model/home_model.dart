@@ -71,7 +71,7 @@ int counter = 1;
 class MovieItem {
   int rank = 0;
   String imageURL = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg0.baidu.com%2Fit%2Fu%3D3453417222%2C293089715%26fm%3D253%26app%3D120%26f%3DJPEG%3Fw%3D791%26h%3D1200&refer=http%3A%2F%2Fimg0.baidu.com&app=2002&size=w300&q=a80&n=0&g=0n&fmt=jpeg?sec=1645364968&t=f417c54c353e98e5bec878055e33d4d0";
-  String title = "千与千寻";
+  String title = "千与千寻千与千寻千与千寻";
   String playDate = "2018-18-18";
   double rating = 0.3;
   List<String> genres = ["犯罪", "喜剧"];
