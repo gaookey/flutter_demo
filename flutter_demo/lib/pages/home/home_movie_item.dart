@@ -116,12 +116,14 @@ class GoHomeMovieItem extends StatelessWidget {
   }
 
   Widget buildContentInfoRate() {
-    return Row(
-      children: [
-        GoStarRating(rating: movieItem.rating, size: 25),
-        SizedBox(width: 5),
-        Text("${movieItem.rating}", style: TextStyle(fontSize: 18))
-      ],
+    return FittedBox(
+      child: Row(
+        children: [
+          GoStarRating(rating: movieItem.rating, size: 25),
+          SizedBox(width: 5),
+          Text("${movieItem.rating}", style: TextStyle(fontSize: 18))
+        ],
+      ),
     );
   }
 
