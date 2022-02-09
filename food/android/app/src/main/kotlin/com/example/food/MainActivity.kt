@@ -1,4 +1,4 @@
-package com.example.food_plaza
+package com.example.food
 
 import io.flutter.embedding.android.FlutterActivity
 

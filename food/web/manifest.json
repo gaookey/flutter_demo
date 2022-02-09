@@ -1,6 +1,6 @@
 {
-    "name": "food_plaza",
-    "short_name": "food_plaza",
+    "name": "food",
+    "short_name": "food",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
