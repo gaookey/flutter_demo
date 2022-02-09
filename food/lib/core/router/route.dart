@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food/ui/pages/detail/detail.dart';
 import 'package:food/ui/pages/home/home.dart';
 import 'package:food/ui/pages/main/main.dart';
+import 'package:food/ui/pages/meal/meal.dart';
 import 'package:food/ui/pages/unknown_page.dart';
 
 class GORouter {
@@ -8,7 +10,8 @@ class GORouter {
 
   static final Map<String, WidgetBuilder> routes = {
     GoMainPage.routeName: (context) => GoMainPage(),
-    // AboutPage.routeName: (context) => AboutPage()
+    GOMealPage.routeName: (context) => GOMealPage(),
+    GODetailPage.routeName: (context) => GODetailPage()
   };
 
   static final RouteFactory generateRoute = (settings) {

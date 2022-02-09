@@ -7,7 +7,7 @@ class GoAppTheme {
   static const double normalFontSize = 22;
   static const double largeFontSize = 24;
 
-  static const Color normalTextColors = Colors.red;
+  static const Color normalTextColors = Colors.black;
 
   static final ThemeData normalTheme = ThemeData(
       // 主题色
@@ -15,17 +15,17 @@ class GoAppTheme {
       // 背景色
       canvasColor: Colors.grey[100],
       textTheme: TextTheme(
-          headline1: TextStyle(fontSize: smallFontSize),
-          headline2: TextStyle(fontSize: normalFontSize, color: Colors.black),
-          headline3: TextStyle(fontSize: largeFontSize),
-          bodyText1:
-              TextStyle(fontSize: bodyFontSize, color: normalTextColors)));
+          headline1: TextStyle(fontSize: smallFontSize, color: Colors.red),
+          headline2: TextStyle(fontSize: normalFontSize, color: Colors.red),
+          headline3: TextStyle(fontSize: largeFontSize, color: Colors.red),
+          bodyText1: TextStyle(fontSize: bodyFontSize, color: normalTextColors)));
 
   static const Color darkTextColors = Colors.purple;
 
-  static final ThemeData darkTheme = ThemeData(
-      primarySwatch: Colors.cyan,
-      textTheme: TextTheme(
-          bodyText1:
-              TextStyle(fontSize: normalFontSize, color: normalTextColors)));
+  static final ThemeData darkTheme = GoAppTheme.normalTheme;
+  // static final ThemeData darkTheme = ThemeData(
+  //     primarySwatch: Colors.cyan,
+  //     textTheme: TextTheme(
+  //         bodyText1:
+  //             TextStyle(fontSize: normalFontSize, color: normalTextColors)));
 }
