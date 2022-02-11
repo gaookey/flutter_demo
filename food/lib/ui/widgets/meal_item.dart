@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:food/core/model/meal_model.dart';
 import 'package:food/core/extension/int_extension.dart';
+import 'package:food/core/viewmodel/favor_view_model.dart';
 import 'package:food/ui/pages/detail/detail.dart';
 import 'package:food/ui/widgets/operation_item.dart';
+import 'package:provider/provider.dart';
 
 class GOMealItem extends StatelessWidget {
   final GoMealModel _mealModel;
@@ -66,16 +68,39 @@ class GOMealItem extends StatelessWidget {
 
   Widget buildOperationInfo() {
     return Padding(
-      padding: EdgeInsets.all(16.px),
+      padding: EdgeInsets.all(5.px),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           GOOperationItem(Icon(Icons.schedule), "${_mealModel.duration}分钟"),
           GOOperationItem(
               Icon(Icons.restaurant), "${_mealModel.complexityString}"),
-          GOOperationItem(Icon(Icons.favorite), "${_mealModel.duration}分钟"),
+          buildFavorItem()
         ],
       ),
     );
+  }
+
+  Widget buildFavorItem() {
+    return Consumer<GOFavorViewModel>(builder: (context, favorVM, child) {
+      final icon =
+          favorVM.isFavor(_mealModel) ? Icons.favorite : Icons.favorite_border;
+      final color = favorVM.isFavor(_mealModel) ? Colors.red : Colors.black;
+      final title = favorVM.isFavor(_mealModel) ? "已收藏" : "收藏";
+
+      return GestureDetector(
+        child: GOOperationItem(
+          Icon(
+            icon,
+            color: color,
+          ),
+          title,
+          textColor: color,
+        ),
+        onTap: () {
+          favorVM.handleMeal(_mealModel);
+        },
+      );
+    });
   }
 }

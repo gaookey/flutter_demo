@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food/ui/pages/detail/detail.dart';
+import 'package:food/ui/pages/filter/filter.dart';
 import 'package:food/ui/pages/home/home.dart';
 import 'package:food/ui/pages/main/main.dart';
 import 'package:food/ui/pages/meal/meal.dart';
@@ -15,9 +16,12 @@ class GORouter {
   };
 
   static final RouteFactory generateRoute = (settings) {
-    // if (settings.name == DetailPage.routeName) {
-    //   return MaterialPageRoute(builder: (context) => DetailPage(settings.arguments as UserInfo));
-    // }
+    if (settings.name == GOFilterPage.routeName) {
+      return MaterialPageRoute(
+          builder: (context) => GOFilterPage(),
+          // 更改默认弹出方式
+          fullscreenDialog: true);
+    }
     return null;
   };
 

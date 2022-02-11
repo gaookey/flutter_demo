@@ -12,20 +12,22 @@ class GoAppTheme {
   static final ThemeData normalTheme = ThemeData(
       // 主题色
       primarySwatch: Colors.purple,
+      colorScheme: ColorScheme.light(secondary: Colors.amber),
       // 背景色
       canvasColor: Colors.grey[100],
       textTheme: TextTheme(
-          headline1: TextStyle(fontSize: smallFontSize, color: Colors.red),
-          headline2: TextStyle(fontSize: normalFontSize, color: Colors.red),
-          headline3: TextStyle(fontSize: largeFontSize, color: Colors.red),
-          bodyText1: TextStyle(fontSize: bodyFontSize, color: normalTextColors)));
+          headline1: TextStyle(fontSize: smallFontSize, color: Colors.black),
+          headline2: TextStyle(fontSize: normalFontSize, color: Colors.black),
+          headline3: TextStyle(fontSize: largeFontSize, color: Colors.black),
+          bodyText1:
+              TextStyle(fontSize: bodyFontSize, color: normalTextColors)));
 
   static const Color darkTextColors = Colors.purple;
 
   static final ThemeData darkTheme = GoAppTheme.normalTheme;
-  // static final ThemeData darkTheme = ThemeData(
-  //     primarySwatch: Colors.cyan,
-  //     textTheme: TextTheme(
-  //         bodyText1:
-  //             TextStyle(fontSize: normalFontSize, color: normalTextColors)));
+// static final ThemeData darkTheme = ThemeData(
+//     primarySwatch: Colors.cyan,
+//     textTheme: TextTheme(
+//         bodyText1:
+//             TextStyle(fontSize: normalFontSize, color: normalTextColors)));
 }

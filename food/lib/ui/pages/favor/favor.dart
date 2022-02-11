@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food/ui/pages/favor/favor_content.dart';
 
 class GoFavorPage extends StatelessWidget {
 
@@ -9,7 +10,7 @@ class GoFavorPage extends StatelessWidget {
         title: Text("收藏"),
       ),
       body: Center(
-        child: Text("收藏"),
+        child: GOFavorContentPage(),
       ),
     );
   }
